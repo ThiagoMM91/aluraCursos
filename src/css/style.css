@@ -1,0 +1,212 @@
+/*Global Style*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+li, button, label, input, p {
+    font-size: 1.4rem;
+}
+
+h2 {
+    font-size: 4.2rem;
+}
+
+h3 {
+    font-size: 2.4rem;
+    font-weight: 400;
+}
+
+h4, h5 {
+    font-size: 2.2rem;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+button {
+    padding: 2rem 6rem;
+    background: #2b425f;
+    border: none;
+    border-radius: 2rem;
+    color: white;
+    cursor: pointer;
+    transition: background 1s ease-in-out;
+}
+
+button:hover {
+    background: #3f72b1; 
+}
+
+/* Nav Section With HERO */
+
+.main-head {
+    background: #131c27;
+    color: white;
+}
+
+nav {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    padding: 2rem;
+    min-height: 10vh;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#logo {
+    font-size: 3.8rem;
+    flex: 2 1 40rem;
+    font-family: 'Yellowtail', cursive;
+}
+
+nav ul {
+    display: flex;
+    flex: 1 1 40rem;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+/* Hero section */
+
+.hero {
+    min-height: 90vh;
+    background: linear-gradient(rgba(0, 18, 41, 0.8), transparent), url(/src/img/time-lapse-photography-of-passing-vehicles-on-city-roads-2403251.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h3 {
+    padding: 5rem;
+}
+
+/* Locations Section */
+#locations {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(rgba(41, 41, 41, 0.2), transparent), url("/src/img/new-york-page.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.locations-head {
+    width: 90%;
+    margin: auto;
+}
+
+.locations-head h2 {
+    padding: 1rem 0;
+    text-decoration-thickness: 0.5rem;
+    text-decoration: underline;
+}
+
+.locations-head h3 {
+    padding: 4rem 0;
+
+    /*applying gradient to text **DONT WORK IN ALL BROWSERS** */
+    /*background: linear-gradient(#131c27, #663b34);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;*/
+}
+
+.cloud {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+}
+
+.moving-cloud-1 {
+    z-index: 1;
+    animation: cloudsAnimation 4s infinite forwards alternate ease-in-out;
+}
+
+.moving-cloud-2 {
+    top: 10%;
+    opacity: 0.5;
+    z-index: -1;
+    animation: cloudsAnimation 10s infinite forwards alternate ease-in-out;
+}
+
+@keyframes cloudsAnimation {
+    from{
+        transform: translate(10%, -10%);
+    }
+    to{
+        transform: translate(0%, 0%);
+    }
+}
+
+/* Media query - 940 px (tablets) bellow */
+
+@media screen and (max-width: 940px){
+    nav {
+        text-align: center;
+    }
+    nav ul {
+        padding: 0 0 2rem 0;
+    }
+    
+    #logo {
+        padding: 2rem 0 5rem;
+    }
+
+    .hero h2 {
+        margin: 5rem 5rem 0;
+    }
+
+    .hero button {
+        margin: 0 0 4rem 0;
+    }
+
+    .cloud {
+        height: 40rem;
+    }
+
+    .locations-head h3 {
+        background-color: rgba(0, 18, 41, 0.8);
+        color: white;
+        text-align: center;
+        border-radius: 2rem;
+        margin: 2rem 0;
+    }
+
+    .locations-head h2 {
+        text-align: center;
+    }
+
+    .moving-cloud-1 { 
+        z-index: -1;
+    }
+
+    .moving-cloud-2 {
+        z-index: -2;
+    }
+}
